@@ -1,0 +1,22 @@
+/**
+ * Ace editor
+ */
+#ace-editor { 
+    width: 100%;
+    height:350px;
+    margin-left: auto;
+	padding-right: 10px;
+	font-size: 16px;
+}
+
+#ace_editor_value {
+	display: none;
+}
+
+.hsc-buttonskin-none .hsc-link, .hsc-count-only {
+	text-decoration: none;
+}
+
+.hsc-buttonskin-none .hsc-link:hover, .hsc-count-only:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "943913a15c15e8f269f47725eed24e3b",
+    "packages": [
+        {
+            "name": "lotus/almari",
+            "version": "0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tonjoo/almari.git",
+                "reference": "bcec0514bcceb9493bd141f7977be51e2630d11a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tonjoo/almari/zipball/bcec0514bcceb9493bd141f7977be51e2630d11a",
+                "reference": "bcec0514bcceb9493bd141f7977be51e2630d11a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lotus\\Almari\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Todi Adiyatmo Wijoyo",
+                    "homepage": "http://todiadiyatmo.com"
+                }
+            ],
+            "description": "Almari is a micro IoC framework which implement service locator and facade pattern",
+            "homepage": "http://tonjoo.com",
+            "keywords": [
+                "facade",
+                "framework",
+                "ioc",
+                "lotus"
+            ],
+            "time": "2014-06-11 09:19:33"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

@@ -1,0 +1,32 @@
+/* BUTTONS
+ ================================================== */
+.hsc-button.hsc-buttonskin-black {
+	padding-top: 10px;
+	padding-bottom: 13px;
+	font-size: 14px;
+}
+
+.hsc-button.hsc-buttonskin-black a.hsc-link {
+	text-decoration: none;
+	font-size: inherit;
+}
+
+.hsc-button.hsc-buttonskin-black a.hsc-link {	
+	padding: 7px 12px;
+	border-width: 2px;
+	border-style: solid;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+	color: #FFF;
+	border-color: #222;
+	background: #222;
+}
+
+.hsc-button.hsc-buttonskin-black a.hsc-link:hover {	
+	color: #fff;
+	border-color: #333;
+	background-color: #333;
+}
