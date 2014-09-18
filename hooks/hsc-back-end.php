@@ -58,3 +58,10 @@ function hsc_preview_button() {
     
     HSCGenerate::generate_in_ajax_backend();
 }
+
+add_action('wp_ajax_hsc_preview_button_loadmore', 'hsc_preview_button_loadmore' );
+function hsc_preview_button_loadmore() {
+    global $wpdb; // this is how you get access to the database
+    
+    HSCGenerate::generate_in_ajax_backend('load-more');
+}

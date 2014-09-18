@@ -1,9 +1,5 @@
-.hsc-comment-container
-{
-	margin-top:30px;
-    display:none;
-}
-.hsc-comment-container.active
-{
-    display:block;
+/* silent is golden */
+
+.hsc-button {
+	margin: 15px 0;
 }

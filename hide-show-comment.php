@@ -1,22 +1,20 @@
 <?php
-/*
-Plugin Name: Hide Show Comment
-Plugin URI: http://www.tonjoo.com/addons/hide-show-comment
-Description: Keep your reader focused on your content. Use this plugin "hide and show" your comment form !
-Version: 1.0.0
-Author: tonjoo
-Author URI: http://www.tonjoo.com/
-Contributor: Todi Adiyatmo Wijoyo, Haris Ainur Rozak
-*/
+/**
+ * Plugin Name: Hide Show Comment
+ * Plugin URI: http://www.tonjoo.com/addons/hide-show-comment
+ * Description: Keep your reader focused on your content. Use this plugin "hide and show" your comment form !
+ * Version: 1.0.5
+ * Author: tonjoo
+ * Author URI: http://www.tonjoo.com/
+ * Contributor: Todi Adiyatmo Wijoyo, Haris Ainur Rozak
+ */
 
 define("TONJOO_HSCOMMENT", 'show-hide-comment');
-define('HSCOMMENT_VERSION','1.0.0');
+define('HSCOMMENT_VERSION','1.0.5');
 define('HSCOMMENT_BASE_PATH',__DIR__);
 define('HSCOMMENT_DIR_NAME', str_replace("/hide-show-comment.php", "", plugin_basename(__FILE__)));
 
-// require_once( plugin_dir_path( __FILE__ ) . 'src/ajax.php');
-
-//Included Files
+// Included Files
 include __DIR__.'/vendor/autoload.php';
 include __DIR__.'/src/tonjoo-library.php';
 

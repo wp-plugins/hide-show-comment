@@ -1,8 +1,8 @@
 === Hide Show Comment ===
 Contributors: Todi.Adiatmo, haristonjoo
-Tags: comment, hide comment, show comment, hide comment toggle, automatic, auto
+Tags: comment, comments, hide comment, show comment, load more comment, automatic, auto
 Requires at least: 3.0.3
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,24 +11,37 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Hide Show Comment is the simple wordpress plugin that allow the user to create a hide-show comment toggle button.
 The toggle button is easy to custom with the options page that located in the WordPress settings section.
 
+Since version 1.0.5, there are a new major feature comming in, the Load More function.
+With the 'load more' function, user can be allowed to split the comment list and load it step-by-step depending 'comment to load' number.
+
 This plugin requires PHP version at least 5.3
 
-The free version is come with everything you need to auto create a hide-show comment toggle button.
+The free version is come with everything you need to auto create a hide-show comment toggle button and load more button.
 
 **Features :**
 
 * Auto create hide show comment toggle button.
+* Auto create load more comment button.
 * Align text (Left, Right, Center) your text based on your preference.
 * Custom button text and size.
 * Custom css field
 
-And if you like our plugin and want to do more customization we offer the premium version with some added feature :
+And if you like our plugin and want to do more customization we offer the premium version with great added feature :
 
-* 40 + Read More button themes.
+* 40+ Read More button themes.
 * Custom button template with comment count.
 * Custom button text font family.
+* Hide Show and Load More animation
+* Comment number per load
+
 
 Get the premium version on [premium version](https://tonjoo.com/addons/hide-show-comment-premium/ "premium version")
+
+**Plugin Demo**
+You can try the plugin on this url: http://coba.tonjoo.com/ecae/
+
+* username: ecae
+* password: 123456
 
 *if you have any questions,comment,customization request or suggestion please contact us via our [support forum](https://forum.tonjoo.com/thread-category/hide-show-comment/)
 
@@ -47,11 +60,18 @@ Find more detail on our official [plugin page](https://tonjoo.com/addons/hide-sh
 
 == Screenshots ==
 
-1. Complete setting options and easy to configure
-2. Style your hide-show button with 40+ button themes and customizable font type
-3. Hide Show Comment on action
+1. Hide Show Comment featuring Load More Comment on action
+2. Complete setting options (with premium feature installed). Easy to configure.
 
 == Changelog ==
+
+= 1.0.5 =
+* Add new Load More Comment function with many advanced options
+* Enable to change identifier type, auto or manual
+* Premium Feature: Enable to change "comment to load" number
+* Premium Feature: Enable to change animation
+* Tested up to WordPress 4.0
+* Fix known bugs
 
 = 1.0.0 =
 * First Release

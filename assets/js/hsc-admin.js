@@ -1,21 +1,21 @@
 jQuery(document).ready(function($){
-	/**
-	 * Ace editor
-	 */
-	var editor = ace.edit("ace-editor");
+    /**
+     * Ace editor
+     */
+    var editor = ace.edit("ace-editor");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/css");
     editor.getSession().on('change', function(e) {
-    	var code = editor.getSession().getValue();
+        var code = editor.getSession().getValue();
 
-    	jQuery("#ace_editor_value").val(code);        
+        jQuery("#ace_editor_value").val(code);        
         preview_button();
-	});
+    });
 
     /**
      * Select2
      */
-	function format(state) {
+    function format(state) {
         if (!state.id) return state.text; // optgroup
 
         var name_select = state.id.toLowerCase();
@@ -39,15 +39,32 @@ jQuery(document).ready(function($){
     }).on("change", function(e) {
             preview_button(); 
     });
+    $("select[name='tonjoo_hsc_options[loadmore_skin]']").select2({
+        formatResult: format,
+        formatSelection: format,
+        escapeMarkup: function(m) { return m; }
+    }).on("change", function(e) {
+            preview_button_loadmore(); 
+    });
+
 
     /**
-     * Readmore preview in options
+     * Hide Show Button Preview
+     *
+     * @since   1.0.5
      */
     $("input[name='tonjoo_hsc_options[show_button_text]']").on('keyup',function(){
         preview_button(); 
     })
     $("select[name='tonjoo_hsc_options[align]']").on('change',function(){
         preview_button(); 
+    })
+    $("select[name='tonjoo_hsc_options[hideshow_animation]']").on('change',function(){
+        if(hsc_premium_enable == false)
+        {
+            alert('Please purchase the premium edition to enable this feature');
+            $("select[name='tonjoo_hsc_options[hideshow_animation]']").val('none');
+        }
     })
     $("select[name='tonjoo_hsc_options[button_font]']").on('change',function(){
         if(hsc_premium_enable == false)
@@ -67,7 +84,7 @@ jQuery(document).ready(function($){
         if(hsc_premium_enable == false)
         {
             alert('Please purchase the premium edition to enable this feature');
-            $("select[name='tonjoo_hsc_options[button_font]']").val('Open Sans');
+            $("select[name='tonjoo_hsc_options[template]']").val('button_only');
         }
         else
         {
@@ -132,8 +149,105 @@ jQuery(document).ready(function($){
         });
     }
 
+
+    /**
+     * Load More Button Preview
+     *
+     * @since   1.0.5
+     */
+    $("input[name='tonjoo_hsc_options[loadmore_button_text]']").on('keyup',function(){
+        preview_button_loadmore(); 
+    })
+    $("select[name='tonjoo_hsc_options[loadmore_align]']").on('change',function(){
+        preview_button_loadmore(); 
+    })
+    $("select[name='tonjoo_hsc_options[loadmore_animation]']").on('change',function(){
+        if(hsc_premium_enable == false)
+        {
+            alert('Please purchase the premium edition to enable this feature');
+            $("select[name='tonjoo_hsc_options[loadmore_animation]']").val('none');
+        }
+    })
+    $("select[name='tonjoo_hsc_options[loadmore_font]']").on('change',function(){
+        if(hsc_premium_enable == false)
+        {
+            alert('Please purchase the premium edition to enable this feature');
+            $("select[name='tonjoo_hsc_options[loadmore_font]']").val('Open Sans');
+        }
+        else
+        {
+            preview_button_loadmore(); 
+        }
+    })
+    $("select[name='tonjoo_hsc_options[loadmore_load_number]']").on('change',function(){
+        if(hsc_premium_enable == false)
+        {
+            alert('Please purchase the premium edition to enable this feature');
+            $("select[name='tonjoo_hsc_options[loadmore_load_number]']").val('3');
+        }
+    })    
+    $("input[name='tonjoo_hsc_options[loadmore_font_size]']").on('keyup mouseup',function(){        
+        preview_button_loadmore(); 
+    })
+
+    function preview_button_loadmore()
+    {
+        var button_skin = $("select[name='tonjoo_hsc_options[loadmore_skin]']").val();
+        var lasSubstring = button_skin.substr(button_skin.length - 12);
+
+        if(hsc_premium_enable == false && lasSubstring == "-PREMIUMtrue")
+        {
+            alert('Please purchase the premium edition to enable this feature');
+            $("select[name='tonjoo_hsc_options[loadmore_skin]']").select2("val", "hsc-buttonskin-none");
+
+            button_skin = "hsc-buttonskin-none";
+        }
+        
+        data = {
+            action: 'hsc_preview_button_loadmore',
+            loadmore_button_text: $("input[name='tonjoo_hsc_options[loadmore_button_text]']").val(),
+            loadmore_align: $("select[name='tonjoo_hsc_options[loadmore_align]']").val(),
+            loadmore_font: $("select[name='tonjoo_hsc_options[loadmore_font]']").val(),            
+            loadmore_font_size: $("input[name='tonjoo_hsc_options[loadmore_font_size]']").val(),
+            loadmore_skin: button_skin,
+            custom_css: editor.getSession().getValue()
+        }
+
+        // $('#hsc_ajax_preview_button').html("<img src='" + hsc_dir_name + "/assets/loading.gif'>");
+
+        $.post(ajaxurl, data,function(response){
+            $('#hsc_ajax_preview_button_loadmore').html(response);
+        });
+    }
+
+
+    /**
+     * Advanced settings
+     *
+     * @since   1.0.5
+     */
+    var identifierChanger = $("select[name='tonjoo_hsc_options[identifier_type]']");
+
+    if(identifierChanger.val() == 'auto')
+    {
+        $('.advanced-form').css('display','none');
+    }    
+
+    identifierChanger.on('change',function(){
+        if($(this).val() == 'auto')
+        {
+            $('.advanced-form').hide();
+        }
+        else
+        {
+            $('.advanced-form').show();
+        }
+    })
+
+
     /**
      * Run on start
      */
     preview_button();
+    preview_button_loadmore();
 });

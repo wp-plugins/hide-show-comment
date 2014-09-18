@@ -19,6 +19,14 @@ class HSCOption
 
 	public function load_default($options)
 	{	
+		if(!isset($options['plugin_type']) || $options['plugin_type'] == ''){
+			$options['plugin_type']="all";
+		}
+
+		if(!isset($options['identifier_type']) || $options['identifier_type'] == ''){
+			$options['identifier_type']="auto";
+		}
+
 		if(!isset($options['show_button_text'])||$options['show_button_text']==''){
 			$options['show_button_text']='Show Comments';		
 		}
@@ -27,8 +35,52 @@ class HSCOption
 			$options['hide_button_text']='Hide Comments';		
 		}
 
+		if(!isset($options['loadmore_button_text'])||$options['loadmore_button_text']==''){
+			$options['loadmore_button_text']='Load More';		
+		}
+
 		if(!isset($options['align'])){
 			$options['align']='left';		
+		}
+
+		if(!isset($options['loadmore_align'])){
+			$options['loadmore_align']='left';		
+		}
+
+		if(!isset($options['hideshow_animation']) || !function_exists('is_hsc_premium_exist')){
+			$options['hideshow_animation']="none";
+		}
+
+		if(!isset($options['button_font_size'])){
+			$options['button_font_size']="14";
+		}
+
+		if(!isset($options['loadmore_font_size'])){
+			$options['loadmore_font_size']="14";
+		}
+
+		if(!isset($options['button_skin']) || !function_exists('is_hsc_premium_exist') && strpos($options['button_skin'], "-PREMIUMtrue")){
+			$options['button_skin']="none";
+		}
+
+		if(!isset($options['button_font']) || !function_exists('is_hsc_premium_exist')){
+			$options['button_font']="Open Sans";
+		}
+
+		if(!isset($options['loadmore_load_number']) || !function_exists('is_hsc_premium_exist')){
+			$options['loadmore_load_number']="3";
+		}
+
+		if(!isset($options['loadmore_skin']) || !function_exists('is_hsc_premium_exist') && strpos($options['loadmore_skin'], "-PREMIUMtrue")){
+			$options['loadmore_skin']="none";
+		}
+
+		if(!isset($options['loadmore_animation']) || !function_exists('is_hsc_premium_exist')){
+			$options['loadmore_animation']="none";
+		}
+
+		if(!isset($options['loadmore_font']) || !function_exists('is_hsc_premium_exist')){
+			$options['loadmore_font']="Open Sans";
 		}
 
 		if(!isset($options['template']) || !function_exists('is_hsc_premium_exist')){
@@ -41,18 +93,6 @@ class HSCOption
 
 		if(!isset($options['custom_css'])){
 			$options['custom_css']="";
-		}
-
-		if(!isset($options['button_skin']) || !function_exists('is_hsc_premium_exist') && strpos($options['button_skin'], "-PREMIUMtrue")){
-			$options['button_skin']="none";
-		}
-
-		if(!isset($options['button_font']) || !function_exists('is_hsc_premium_exist')){
-			$options['button_font']="Open Sans";
-		}
-
-		if(!isset($options['button_font_size'])){
-			$options['button_font_size']="14";
 		}
 
 		if(!isset($options['comment_identifier']) || $options['comment_identifier'] == ''){
