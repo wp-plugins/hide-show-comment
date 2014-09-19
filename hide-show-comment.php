@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Hide Show Comment
  * Plugin URI: http://www.tonjoo.com/addons/hide-show-comment
- * Description: Keep your reader focused on your content. Use this plugin "hide and show" your comment form !
+ * Description: Keep your reader focused on your content. Use this plugin, "hide and show" and "load more" your post comment !
  * Version: 1.0.5
  * Author: tonjoo
  * Author URI: http://www.tonjoo.com/
