@@ -65,6 +65,9 @@ Find more detail on our official [plugin page](https://tonjoo.com/addons/hide-sh
 
 == Changelog ==
 
+= 1.0.6 =
+* Fix known bugs
+
 = 1.0.5 =
 * Add new Load More Comment function with many advanced options
 * Enable to change identifier type, auto or manual

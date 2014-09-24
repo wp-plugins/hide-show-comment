@@ -14,10 +14,25 @@
         base.$el = $(base.el);
 
         base.$wpComment = base.$el.find('.hsc-comment-class');
-        base.count = base.$wpComment.length;
 
-        base.$wpComment.parent('ol').first().wrap('<div class="hsc-comment-container" />');
-        base.$container = base.$wpComment.parent('ol').parent('.hsc-comment-container');
+        // if wp function comment_class() is not implement
+        if(base.$wpComment.length <= 0)
+        {
+        	if(opt.hideShowIdentifierMode == 'manual')
+        	{
+        		base.$wpComment = $(opt.hideShowIdentifier).find('.comment');
+        	}
+
+        	if(base.$wpComment.length <= 0)
+        	{
+        		base.$wpComment = $('body').find('.comment');
+        	}
+        }
+
+        base.$wpComment.parent().first().wrap('<div class="hsc-comment-container" />');
+	    base.$container = base.$wpComment.parent().first().parent('.hsc-comment-container');
+        
+        base.count = base.$wpComment.length;        
 
 		base.initialize = function()
 		{
@@ -142,7 +157,7 @@
 
 		base.loadMore = function()
 		{
-			$(opt.loadMoreHtml).insertAfter(base.$wpComment.last());
+			$(base.$container).children().append(opt.loadMoreHtml);
 
 			base.$btnLoadMore = $('#hsc-btn-loadmore');
 			base.$wpComment.css('display','none');
