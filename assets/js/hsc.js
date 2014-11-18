@@ -13,23 +13,17 @@
 		base.el = el;
         base.$el = $(base.el);
 
-        base.$wpComment = base.$el.find('.hsc-comment-class');
-
+        base.$wpComment = base.$el.find('.hsc-comment-class');        
+        
         // if wp function comment_class() is not implement
-        if(base.$wpComment.length <= 0)
+        if(base.$wpComment.length <= 0 && opt.loadMoreIdentifier != '')
         {
-        	if(opt.hideShowIdentifierMode == 'manual')
-        	{
-        		base.$wpComment = $(opt.hideShowIdentifier).find('.comment');
-        	}
-
-        	if(base.$wpComment.length <= 0)
-        	{
-        		base.$wpComment = $('body').find('.comment');
-        	}
+        	base.$wpComment = base.$el.find(opt.loadMoreIdentifier);
         }
 
-        base.$wpComment.parent().first().wrap('<div class="hsc-comment-container" />');
+        var mainContainer = base.$wpComment.first();
+
+        mainContainer.parent().first().wrap('<div class="hsc-comment-container" />');
 	    base.$container = base.$wpComment.parent().first().parent('.hsc-comment-container');
         
         base.count = base.$wpComment.length;        
@@ -64,8 +58,9 @@
 				base.$hideShowIdentifier.wrapInner('<div class="hsc-comment-container" />');
 
 				base.$containerIdentifier = base.$hideShowIdentifier.children('.hsc-comment-container');
+				var mainContainer = base.$containerIdentifier.first();
 
-				$(opt.hideShowHtml).insertBefore(base.$containerIdentifier);
+				$(opt.hideShowHtml).insertBefore(mainContainer);
 			}			
 
 			base.$btnHideShow = $('#hsc-btn-hideshow');
@@ -243,6 +238,7 @@ jQuery(document).ready(function($){
 	    'hideShowTextHide': hsc_hide_button_text,
 	    'hideShowIdentifierMode': identifier_type,
 	    'hideShowIdentifier': comment_identifier,
+	    'loadMoreIdentifier': loadmore_identifier,
 	    'hideShowAnimation': hide_show_animation,
 		'loadMore': load_more,
 	    'loadMoreHtml': hsc_loadmore_print,

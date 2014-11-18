@@ -143,7 +143,22 @@ if($_POST)
 				"select_array" => $plugin_type
 				);
 			tj_print_select_option($plugin_type_select);
-
+		?>
+		<tr valign="top">
+			<th>Load More Button Identifier</th>
+			<td><input type="text" name="tonjoo_hsc_options[loadmore_identifier]" value="<?php echo $options['loadmore_identifier'] ?>"></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr valign="top">
+			<th>&nbsp;</th>
+			<td colspan="2">
+				This setting is for <b>Manual</b> load more button identifier. 
+				<br>By default, the plugin will add a class ".hsc-comment-class" to each comment child / item, but in some case this class not added because every theme has his own method. 
+				<br>So please identify your child comment class manually and put the class name (class name begin with ".") here if the load more button did't work.
+			</td>
+		</tr>
+		
+		<?php
 			// Identifier Type
 			$options_identifier = array(
 				'0' => array(
@@ -158,12 +173,13 @@ if($_POST)
 			$options_identifier_select = array(
 				"name"=>"tonjoo_hsc_options[identifier_type]",
 				"description" => "",
-				"label" => __("Identifier Type",TONJOO_HSCOMMENT),
+				"label" => __("Hide Show Button",TONJOO_HSCOMMENT),
 				"value" => $options['identifier_type'],
 				"select_array" => $options_identifier
 				);
 			tj_print_select_option($options_identifier_select);
 		?>
+		
 		<tr valign="top" class="advanced-form">
 			<th>Hide Show Button Identifier</th>
 			<td><input type="text" name="tonjoo_hsc_options[comment_identifier]" value="<?php echo $options['comment_identifier'] ?>"></td>
@@ -171,7 +187,10 @@ if($_POST)
 		</tr>
 		<tr valign="top" class="advanced-form">
 			<th>&nbsp;</th>
-			<td colspan="2">This setting is for <b>Manual</b> identifier type. <br>The default WordPress comment ID is "#comments", but if you use another identifier, you can change here. The value can be ID ( # ) or Class ( . ) </td>
+			<td colspan="2">
+				This setting is for <b>Manual</b> hide show button identifier. 
+				<br>The default WordPress comment ID is "#comments", but if your theme use another identifier, you can change here. The value can be ID ( # ) or Class ( . ) 
+			</td>
 		</tr>
 
 		<?php

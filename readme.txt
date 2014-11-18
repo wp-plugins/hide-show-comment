@@ -65,6 +65,10 @@ Find more detail on our official [plugin page](https://tonjoo.com/addons/hide-sh
 
 == Changelog ==
 
+= 1.0.7 =
+* Add load more identifier
+* Fix known bugs
+
 = 1.0.6 =
 * Fix known bugs
 

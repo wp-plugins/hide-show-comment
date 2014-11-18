@@ -178,6 +178,7 @@ class HSCGenerate
 	    $load_more = $this->options['plugin_type'] == 'hide-show' ? 'false' : 'true';
 	    
 	    echo "var comment_identifier = '{$this->options['comment_identifier']}';";
+	    echo "var loadmore_identifier = '{$this->options['loadmore_identifier']}';";
 	    echo "var identifier_type = '{$this->options['identifier_type']}';";
 	    echo "var hide_show = $hide_show;";
 	    echo "var load_more = $load_more;";

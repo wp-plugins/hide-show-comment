@@ -1,13 +1,12 @@
 <?php
 // add hsc-comment-class to comment list
-add_filter('comment_class', 'add_hsc_class');
+add_filter('comment_class', 'add_hsc_class', 999);
 function add_hsc_class( $classes ) 
 {
 	array_push($classes, 'hsc-comment-class');
 
 	return $classes;
 }
-
 
 // enqueue_scripts
 add_action('wp_enqueue_scripts', 'hsc_wp_enqueue_scripts', 100);

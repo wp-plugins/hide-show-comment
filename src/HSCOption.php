@@ -20,7 +20,7 @@ class HSCOption
 	public function load_default($options)
 	{	
 		if(!isset($options['plugin_type']) || $options['plugin_type'] == ''){
-			$options['plugin_type']="all";
+			$options['plugin_type']="hide-show";
 		}
 
 		if(!isset($options['identifier_type']) || $options['identifier_type'] == ''){
@@ -97,6 +97,10 @@ class HSCOption
 
 		if(!isset($options['comment_identifier']) || $options['comment_identifier'] == ''){
 			$options['comment_identifier']="#comments";
+		}
+
+		if(!isset($options['loadmore_identifier']) || $options['loadmore_identifier'] == ''){
+			$options['loadmore_identifier']=".hsc-comment-class";
 		}
 
 		return $options;
