@@ -628,7 +628,7 @@ if($_POST)
 		</div>
 
 		<!-- ADS -->
-		<div class="postbox">			
+		<div class="postbox" style="display:none;">			
 			<script type="text/javascript">
 				/**
 				 * Setiap dicopy-paste, yang find dan dirubah adalah

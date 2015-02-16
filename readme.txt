@@ -35,7 +35,7 @@ And if you like our plugin and want to do more customization we offer the premiu
 * Comment number per load
 
 
-Get the premium version on [premium version](https://tonjoo.com/addons/hide-show-comment-premium/ "premium version")
+Get the premium version on [premium version](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
 
 **Plugin Demo**
 You can try the plugin on this url: http://coba.tonjoo.com/ecae/
@@ -43,9 +43,9 @@ You can try the plugin on this url: http://coba.tonjoo.com/ecae/
 * username: ecae
 * password: 123456
 
-*if you have any questions,comment,customization request or suggestion please contact us via our [support forum](https://forum.tonjoo.com/thread-category/hide-show-comment/)
+*if you have any questions,comment,customization request or suggestion please contact us via our [support forum](https://forum.tonjoostudio.com/thread-category/hide-show-comment/)
 
-Find more detail on our official [plugin page](https://tonjoo.com/addons/hide-show-comment "visit plugin site")
+Find more detail on our official [plugin page](https://tonjoostudio.com/addons/hide-show-comment "visit plugin site")
 
 **Usage Instruction**
 
