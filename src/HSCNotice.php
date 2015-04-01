@@ -49,7 +49,7 @@ class HSCNotice
 	    if (! $is_ignore_notice  && ! function_exists("is_hsc_premium_exist")) 
 	    {
 	        echo '<div class="updated"><p>';
-	        printf(__('Get 40+ button style, <a href="%1$s" target="_blank">Get Hide Show Comment Premium !</a> <span style="float:right;"><a href="%2$s" style="color:#a00;">Don\'t bug me again</a> <a href="%3$s" class="button button-primary" style="margin:-5px -5px 0 5px;vertical-align:baseline;">Not Now</a></span>'), 'https://tonjoo.com/addons/hide-show-comment-premium/', '?hsc_premium_nag_ignore=forever', '?hsc_premium_nag_ignore=later');
+	        printf(__('Get 40+ button style, <a href="%1$s" target="_blank">Get Hide Show Comment Premium !</a> <span style="float:right;"><a href="%2$s" style="color:#a00;">Don\'t bug me again</a> <a href="%3$s" class="button button-primary" style="margin:-5px -5px 0 5px;vertical-align:baseline;">Not Now</a></span>'), 'https://tonjoostudio.com/addons/hide-show-comment-premium/', '?hsc_premium_nag_ignore=forever', '?hsc_premium_nag_ignore=later');
 	        echo "</p></div>";
 	    }
 	}

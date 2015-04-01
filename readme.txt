@@ -38,7 +38,7 @@ And if you like our plugin and want to do more customization we offer the premiu
 Get the premium version on [premium version](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
 
 **Plugin Demo**
-You can try the plugin on this url: http://coba.tonjoo.com/ecae/
+You can try the plugin on this url: http://coba.tonjoostudio.com
 
 * username: ecae
 * password: 123456
@@ -64,6 +64,11 @@ Find more detail on our official [plugin page](https://tonjoostudio.com/addons/h
 2. Complete setting options (with premium feature installed). Easy to configure.
 
 == Changelog ==
+
+= 1.1.0 =
+* Add an ability to make the button font same as content font
+* Add plugin updater
+* Fix known bugs
 
 = 1.0.7 =
 * Add load more identifier

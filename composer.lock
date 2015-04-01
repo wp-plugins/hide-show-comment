@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Almari is a micro IoC framework which implement service locator and facade pattern",
-            "homepage": "http://tonjoo.com",
+            "homepage": "https://tonjoostudio.com",
             "keywords": [
                 "facade",
                 "framework",

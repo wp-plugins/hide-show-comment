@@ -40,6 +40,8 @@ class HSCGenerate
 
 	private function get_font_style()
 	{
+		if($this->font == '') return;
+
 		echo "<style type='text/css'>";
 
 	    switch ($this->font)
@@ -75,7 +77,7 @@ class HSCGenerate
 	            echo "@import url(http://fonts.googleapis.com/css?family=Bevan);"; //Bevan
 	            break;
 	        default:
-	            echo "@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext);"; //Open Sans
+	            echo ""; //Inherit fonts
 	    }
 
 	    echo "p.{$this->class} { font-family: '".$this->font."', Helvetica, Arial, sans-serif; }";    

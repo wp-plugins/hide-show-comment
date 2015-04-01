@@ -64,7 +64,7 @@ class HSCOption
 		}
 
 		if(!isset($options['button_font']) || !function_exists('is_hsc_premium_exist')){
-			$options['button_font']="Open Sans";
+			$options['button_font']="";
 		}
 
 		if(!isset($options['loadmore_load_number']) || !function_exists('is_hsc_premium_exist')){
@@ -80,7 +80,7 @@ class HSCOption
 		}
 
 		if(!isset($options['loadmore_font']) || !function_exists('is_hsc_premium_exist')){
-			$options['loadmore_font']="Open Sans";
+			$options['loadmore_font']="";
 		}
 
 		if(!isset($options['template']) || !function_exists('is_hsc_premium_exist')){
@@ -101,6 +101,10 @@ class HSCOption
 
 		if(!isset($options['loadmore_identifier']) || $options['loadmore_identifier'] == ''){
 			$options['loadmore_identifier']=".hsc-comment-class";
+		}
+
+		if(!isset($options['license_key']) || $options['license_key'] == ''){
+			$options['license_key'] = "";
 		}
 
 		return $options;

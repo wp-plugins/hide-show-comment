@@ -4,7 +4,17 @@
  */
 if($_POST)
 {
-	update_option('tonjoo_hsc_options', $_POST['tonjoo_hsc_options']);
+	/**
+	 * Tonjoo License
+	 */
+	if(function_exists('is_hsc_premium_exist'))
+	{
+		$PluginLicense = new TonjooPluginLicenseHSC($_POST['tonjoo_hsc_options']['license_key']);
+		$_POST = $PluginLicense->license_on_save($_POST);
+	}	
+
+	// update options
+	update_option('tonjoo_hsc_options', $_POST['tonjoo_hsc_options']);	
 	
 	$location = admin_url("options-general.php?page=hide-show-comment/view/options-page.php") . '&settings-updated=true';
 	echo "<meta http-equiv='refresh' content='0;url=$location' />";
@@ -32,13 +42,13 @@ if($_POST)
 
 <br>
 <?php _e("Hide Show Comment by",TONJOO_HSCOMMENT) ?> 
-<a href='http://tonjoo.com' target="_blank">tonjoo</a> ~ 
-<a href='http://tonjoo.com/addons/hide-show-comment/' target="_blank"><?php _e("Plugin Page",TONJOO_HSCOMMENT) ?></a> | 
+<a href='https://tonjoostudio.com' target="_blank">Tonjoo Studio</a> ~ 
+<a href='https://tonjoostudio.com/addons/hide-show-comment/' target="_blank"><?php _e("Plugin Page",TONJOO_HSCOMMENT) ?></a> | 
 <a href='http://wordpress.org/support/view/plugin-reviews/hide-show-comment?filter=5' target="_blank"><?php _e("Please Rate :)",TONJOO_HSCOMMENT) ?></a> |
 <a href='http://wordpress.org/extend/plugins/hide-show-comment/' target="_blank"><?php _e("Comment",TONJOO_HSCOMMENT) ?></a> | 
-<a href='http://forum.tonjoo.com' target="_blank"><?php _e("Bug Report",TONJOO_HSCOMMENT) ?></a> |
-<a href='http://tonjoo.com/addons/hide-show-comment/#faq' target="_blank"><?php _e("FAQ",TONJOO_HSCOMMENT) ?></a> |
-<a href='http://tonjoo.com/donate' target="_blank"><?php _e("Donate Us",TONJOO_HSCOMMENT) ?></a> 
+<a href='https://forum.tonjoostudio.com' target="_blank"><?php _e("Bug Report",TONJOO_HSCOMMENT) ?></a> |
+<a href='https://tonjoostudio.com/addons/hide-show-comment/#faq' target="_blank"><?php _e("FAQ",TONJOO_HSCOMMENT) ?></a> |
+<a href='https://tonjoostudio.com/donate' target="_blank"><?php _e("Donate Us",TONJOO_HSCOMMENT) ?></a> 
 <br>
 <br>
 
@@ -55,8 +65,19 @@ if($_POST)
 		$options = HSCOption::get_options();
 	?>
 
+	
+	<?php if(function_exists('is_hsc_premium_exist')): ?>
+	<h2 class="nav-tab-wrapper">
+		<a class="nav-tab" id='opt-general-tab' href='#opt-general'><?php _e('General Options',TONJOO_HSCOMMENT) ?></a>
+		<a class="nav-tab" id='opt-license-tab' href='#opt-license'><?php _e('License',TONJOO_HSCOMMENT) ?></a>
+	</h2>
+	<?php endif ?>
+
+
 	<div class="metabox-holder columns-2" style="margin-right: 300px;">	
-	<div class="postbox-container" style="width: 100%;min-width: 463px;float: left; ">
+
+	<!-- GENERAL OPTIONS -->
+	<div id='opt-general' class="postbox-container group" style="width: 100%;min-width: 463px;float: left; ">
 	<div class="meta-box-sortables ui-sortable">
 	<div id="adminform" class="postbox">
 	
@@ -66,7 +87,7 @@ if($_POST)
 		// premium anouncement
 		if(! function_exists('is_hsc_premium_exist'))
 		{		
-			$premium_url = 'https://tonjoo.com/addons/hide-show-comment-premium/';
+			$premium_url = 'https://tonjoostudio.com/addons/hide-show-comment-premium/';
 
 			echo "<h3 class='hndle'><span>Purchase The <a style='font-size:14px;font-weight:bold;' href='$premium_url' target='_blank'>Premium Edition</a> To Enable All Premium Features</span></h3>";
 			$premium_message = "<br/><span style='color:#B23843;'>Unable to change? <a href='$premium_url' target='_blank' ><b>unlock</b></a></span>";
@@ -197,44 +218,48 @@ if($_POST)
 		// Button font
 		$button_font_array = array(
 			'0' => array(
-				'value' =>	'Open Sans',
-				'label' =>  __('Open Sans',TONJOO_HSCOMMENT)
+				'value' =>	'',
+				'label' =>  'Use Content Font'
 				),
 			'1' => array(
-				'value' =>	'Lobster',
-				'label' =>  __('Lobster',TONJOO_HSCOMMENT) 
+				'value' =>	'Open Sans',
+				'label' =>  'Open Sans'
 				),
 			'2' => array(
-				'value' =>	'Lobster Two',
-				'label' =>  __('Lobster Two',TONJOO_HSCOMMENT) 
+				'value' =>	'Lobster',
+				'label' =>  'Lobster'
 				),
 			'3' => array(
-				'value' =>	'Ubuntu',
-				'label' =>  __('Ubuntu',TONJOO_HSCOMMENT) 
+				'value' =>	'Lobster Two',
+				'label' =>  'Lobster Two'
 				),
 			'4' => array(
-				'value' =>	'Ubuntu Mono',
-				'label' =>  __('Ubuntu Mono',TONJOO_HSCOMMENT) 
+				'value' =>	'Ubuntu',
+				'label' =>  'Ubuntu'
 				),
 			'5' => array(
-				'value' =>	'Titillium Web',
-				'label' =>  __('Titillium Web',TONJOO_HSCOMMENT) 
+				'value' =>	'Ubuntu Mono',
+				'label' =>  'Ubuntu Mono'
 				),
 			'6' => array(
-				'value' =>	'Grand Hotel',
-				'label' =>  __('Grand Hotel',TONJOO_HSCOMMENT) 
+				'value' =>	'Titillium Web',
+				'label' =>  'Titillium Web'
 				),
 			'7' => array(
-				'value' =>	'Pacifico',
-				'label' =>  __('Pacifico',TONJOO_HSCOMMENT) 
+				'value' =>	'Grand Hotel',
+				'label' =>  'Grand Hotel'
 				),
 			'8' => array(
-				'value' =>	'Crafty Girls',
-				'label' =>  __('Crafty Girls',TONJOO_HSCOMMENT) 
+				'value' =>	'Pacifico',
+				'label' =>  'Pacifico'
 				),
 			'9' => array(
+				'value' =>	'Crafty Girls',
+				'label' =>  'Crafty Girls'
+				),
+			'10' => array(
 				'value' =>	'Bevan',
-				'label' =>  __('Bevan',TONJOO_HSCOMMENT) 
+				'label' =>  'Bevan'
 				)
 		);
 		?>
@@ -610,7 +635,150 @@ if($_POST)
 	</div>			
 	</div>			
 	</div>			
+	</div>	
+
+
+	<?php if(function_exists('is_hsc_premium_exist')): ?>
+	<!-- LICENSE OPTIONS -->
+	<div id='opt-license' class="postbox-container group" style="width: 100%;min-width: 463px;float: left; ">
+	<div class="meta-box-sortables ui-sortable">
+	<div id="adminform" class="postbox">
+	<h3 class="hndle"><span><?php _e('License',TONJOO_HSCOMMENT) ?></span></h3>
+	<div class="inside" style="z-index:1;">
+	<table class="form-table">
+		
+		<style type="text/css">
+			#license_status input {
+				width: 200px;
+			}
+		</style>		
+
+		<?php
+			/** 
+			 * license status 
+			 */	
+			$license = isset($options['license_status']) ? unserialize($options['license_status']) : false;	
+
+			$license_status = "<span style='color:red'>Unregistered</span>";
+			$license_email = "<span style='color:red'>None</span>";
+			$license_date = "<span style='color:red'>Not checked</span>";
+			$license_site = "<span style='color:red'>None</span>";
+
+			if($license)
+			{
+				// status
+				if($license['status'])
+				{
+					$license_status = "<span style='color:blue'>";
+					$license_status.= __('Registered',TONJOO_HSCOMMENT);
+					$license_status.= "</span>";
+				} else {
+					$license_status = "<span style='color:red'>";
+					$license_status.= __($license['message'],TONJOO_HSCOMMENT);
+					$license_status.= "</span>";
+				}
+
+				// email
+				if(isset($license['email']) && $license['email'] != 'false')
+				{
+					$license_email = "<span style='font-weight:bold'>{$license['email']}</span>";
+				}
+				else
+				{
+					$license_email = "<span style='color:red'>none</span>";
+				}
+
+				// date
+				if(isset($license['date']) && $license['date'])
+				{
+					$license_date = $license['date'];
+				}
+				else
+				{
+					$license_date = "<span style='color:red'>not checked</span>";
+				}
+
+				// site
+				if(isset($license['site']) && is_array($license['site']))
+				{
+					foreach ($license['site'] as $key => $value) 
+					{
+						$pos = strpos(home_url(), $value);
+
+						if($pos !== false)
+						{
+							$license_site = $value;
+
+							break;
+						}
+					}
+				}
+
+				// end license if true
+			}
+		?>
+
+		<tr valign="top" id="license_status">
+			<th scope="row">Your License Code</th>
+			<td style="width: 300px;" colspan="2">
+				<input type="text" name="tonjoo_hsc_options[license_key]" value="<?php echo $options['license_key'] ?>" style="width:300px;">
+				<input type="submit" name="save_status_license" class="button-primary" value="Register / Check Status" />
+			</td>
+		</tr>
+
+		<tr valign="top" id="license_status">
+			<th scope="row">Last Checked</th>
+			<td style="width: 300px;" colspan="2">
+				<?php echo $license_date ?>
+			</td>
+		</tr>
+
+		<tr valign="top" id="license_status">
+			<th scope="row">Last Status</th>
+			<td style="width: 300px;" colspan="2">
+				<?php echo $license_status ?>
+			</td>
+		</tr>
+
+		<?php if($license['status']): ?>
+			<tr valign="top" id="license_status">
+				<th scope="row">Licensed To</th>
+				<td style="width: 300px;" colspan="2">
+					<?php echo $license_email ?>
+				</td>
+			</tr>
+
+			<tr valign="top" id="license_status">
+				<th scope="row">Registered Sites</th>
+				<td style="width: 300px;" colspan="2">
+					<?php echo $license_site ?>
+				</td>
+			</tr>
+
+			<tr valign="top" id="license_status">
+				<th scope="row" colspan="3">
+					<input type="submit" name="unset_license" class="button" value="Unregister this site" />
+				</th>
+			</tr>
+		<?php endif ?>
+
+		<tr valign="top">
+			<th colspan=3>
+				<?php 
+					_e('Register your license code here to get all benefit of Hide Show Comment. ',TONJOO_HSCOMMENT);
+					echo '<div style="height:10px;"></div>';
+					_e('Find your license code at ',TONJOO_HSCOMMENT);
+				?> 
+				<a href="https://tonjoostudio.com/manage/plugin" target="_blank">https://tonjoostudio.com/manage/plugin</a>
+			</th>
+		</tr>
+
+	</table>
 	</div>			
+	</div>			
+	</div>			
+	</div>
+	<?php endif ?>		
 
 
 	<div class="postbox-container" style="float: right;margin-right: -300px;width: 280px;">
@@ -628,7 +796,7 @@ if($_POST)
 		</div>
 
 		<!-- ADS -->
-		<div class="postbox" style="display:none;">			
+		<div class="postbox">			
 			<script type="text/javascript">
 				/**
 				 * Setiap dicopy-paste, yang find dan dirubah adalah
@@ -638,12 +806,12 @@ if($_POST)
 
 				jQuery(function(){					
 					var pluginName = "hsc";
-					var url = 'http://tonjoo.com/about/?promo=get&plugin=' + pluginName;
+					var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName;
 					var promoFirst = new Array();
 					var promoSecond = new Array();
 
 					<?php if(function_exists('is_hsc_premium_exist')): ?>
-					var url = 'http://tonjoo.com/about/?promo=get&plugin=' + pluginName + '&premium=true';
+					var url = 'https://tonjoostudio.com/jsonp/?promo=get&plugin=' + pluginName + '&premium=true';
 					<?php endif ?>
 
 					// strpos function
@@ -727,13 +895,13 @@ if($_POST)
 			<!-- <h3 class="hndle"><span>This may interest you</span></h3> -->
 			<div class="inside" style="margin: 23px 10px 6px 10px;">
 				<div id="promo_1" style="text-align: center;padding-bottom:17px;">
-					<a href="http://tonjoo.com" target="_blank">
-						<img src="<?php echo plugins_url(HSCOMMENT_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" alt="WordPress Security - A Pocket Guide">
+					<a href="https://tonjoostudio.com" target="_blank">
+						<img src="<?php echo plugins_url(HSCOMMENT_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" alt="Tonjoo Studio">
 					</a>
 				</div>
 				<div id="promo_2" style="text-align: center;">
-					<a href="http://tonjoo.com" target="_blank">
-						<img src="<?php echo plugins_url(HSCOMMENT_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" alt="WordPress Security - A Pocket Guide">
+					<a href="https://tonjoostudio.com" target="_blank">
+						<img src="<?php echo plugins_url(HSCOMMENT_DIR_NAME."/assets/loading-big.gif") ?>" width="100%" alt="Tonjoo Studio">
 					</a>
 				</div>
 			</div>
