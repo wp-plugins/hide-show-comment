@@ -7,7 +7,7 @@ if($_POST)
 	/**
 	 * Tonjoo License
 	 */
-	if(function_exists('is_hsc_premium_exist'))
+	if(class_exists('TonjooPluginLicenseHSC'))
 	{
 		$PluginLicense = new TonjooPluginLicenseHSC($_POST['tonjoo_hsc_options']['license_key']);
 		$_POST = $PluginLicense->license_on_save($_POST);

@@ -65,6 +65,9 @@ Find more detail on our official [plugin page](https://tonjoostudio.com/addons/h
 
 == Changelog ==
 
+= 1.1.1 =
+* Fix plugin updater
+
 = 1.1.0 =
 * Add an ability to make the button font same as content font
 * Add plugin updater
