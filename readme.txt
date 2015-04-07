@@ -1,5 +1,5 @@
 === Hide Show Comment ===
-Contributors: Todi.Adiatmo, haristonjoo
+Contributors: Todi.Adiatmo, haristonjoo, Alzea
 Tags: comment, comments, hide comment, show comment, load more comment, automatic, auto
 Requires at least: 3.0.3
 Tested up to: 4.0
@@ -35,7 +35,7 @@ And if you like our plugin and want to do more customization we offer the premiu
 * Comment number per load
 
 
-Get the premium version on [premium version](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
+Get the premium version on [Hide Show Comment Premium](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
 
 **Plugin Demo**
 You can try the plugin on this url: http://coba.tonjoostudio.com
@@ -43,9 +43,11 @@ You can try the plugin on this url: http://coba.tonjoostudio.com
 * username: coba
 * password: 123456
 
-*if you have any questions,comment,customization request or suggestion please contact us via our [support forum](https://forum.tonjoostudio.com/thread-category/hide-show-comment/)
+*if you have any questions,comment,customization request or suggestion please contact us via our support forum: [Tonjoo Forum](https://forum.tonjoostudio.com/thread-category/hide-show-comment/) or you can find our best plugins at [Tonjoo Studio](https://tonjoostudio.com)
 
-Find more detail on our official [plugin page](https://tonjoostudio.com/addons/hide-show-comment "visit plugin site")
+Find more detail on our official plugin page: [Hide Show Comment](https://tonjoostudio.com/addons/hide-show-comment "visit plugin site")
+
+We can also modify your WordPress plugins according to your needs. Visit us: [Tonjoo WordPress Developer](https://tonjoo.com "Visit Tonjoo Dev Website")
 
 **Usage Instruction**
 
