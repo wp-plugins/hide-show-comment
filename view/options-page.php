@@ -2,7 +2,7 @@
 /**
  * save options
  */
-if($_POST)
+if($_POST && isset($_POST['tonjoo_hsc_options']))
 {
 	/**
 	 * Tonjoo License

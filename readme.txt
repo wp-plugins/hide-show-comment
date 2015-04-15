@@ -1,5 +1,5 @@
 === Hide Show Comment ===
-Contributors: Todi.Adiatmo, haristonjoo, Alzea
+Contributors: Todi.Adiatmo, haristonjoo
 Tags: comment, comments, hide comment, show comment, load more comment, automatic, auto
 Requires at least: 3.0.3
 Tested up to: 4.0
@@ -66,6 +66,10 @@ We can also modify your WordPress plugins according to your needs. Visit us: [To
 2. Complete setting options (with premium feature installed). Easy to configure.
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixing issue with WPML 
+* Fix known bugs
 
 = 1.1.1 =
 * Fix plugin updater
