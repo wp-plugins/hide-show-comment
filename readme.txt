@@ -35,7 +35,7 @@ And if you like our plugin and want to do more customization we offer the premiu
 * Comment number per load
 
 
-Get the premium version on [Hide Show Comment Premium](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
+Get the premium version on [Hide Show Comment Premium](https://tonjoostudio.com/addons/hide-show-comment-premium/?utm_source=wp_org&utm_medium=link&utm_campaign=hsc/ "premium version")
 
 **Plugin Demo**
 You can try the plugin on this url: http://coba.tonjoostudio.com
