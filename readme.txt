@@ -1,5 +1,5 @@
 === Hide Show Comment ===
-Contributors: Todi.Adiatmo, haristonjoo
+Contributors: Todi.Adiatmo, haristonjoo, Alzea
 Tags: comment, comments, hide comment, show comment, load more comment, automatic, auto
 Requires at least: 3.0.3
 Tested up to: 4.2
