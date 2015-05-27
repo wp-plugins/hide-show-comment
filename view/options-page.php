@@ -43,7 +43,7 @@ if($_POST && isset($_POST['tonjoo_hsc_options']))
 <br>
 <?php _e("Hide Show Comment by",TONJOO_HSCOMMENT) ?> 
 <a href='https://tonjoostudio.com' target="_blank">Tonjoo Studio</a> ~ 
-<a href='https://tonjoostudio.com/addons/hide-show-comment/' target="_blank"><?php _e("Plugin Page",TONJOO_HSCOMMENT) ?></a> | 
+<a href='https://tonjoostudio.com/addons/hide-show-comment-premium/?utm_source=upgrade&utm_medium=link&utm_campaign=hsc' target="_blank"><?php _e("Plugin Page",TONJOO_HSCOMMENT) ?></a> | 
 <a href='http://wordpress.org/support/view/plugin-reviews/hide-show-comment?filter=5' target="_blank"><?php _e("Please Rate :)",TONJOO_HSCOMMENT) ?></a> |
 <a href='http://wordpress.org/extend/plugins/hide-show-comment/' target="_blank"><?php _e("Comment",TONJOO_HSCOMMENT) ?></a> | 
 <a href='https://forum.tonjoostudio.com' target="_blank"><?php _e("Bug Report",TONJOO_HSCOMMENT) ?></a> |
@@ -767,6 +767,8 @@ if($_POST && isset($_POST['tonjoo_hsc_options']))
 				<?php 
 					_e('Register your license code here to get all benefit of Hide Show Comment. ',TONJOO_HSCOMMENT);
 					echo '<div style="height:10px;"></div>';
+					_e('<b>Remove Ads</b> by register your license code. ',TONJOO_HSCOMMENT);
+					echo '<div style="height:10px;"></div>';
 					_e('Find your license code at ',TONJOO_HSCOMMENT);
 				?> 
 				<a href="https://tonjoostudio.com/manage/plugin" target="_blank">https://tonjoostudio.com/manage/plugin</a>
@@ -796,6 +798,11 @@ if($_POST && isset($_POST['tonjoo_hsc_options']))
 		</div>
 
 		<!-- ADS -->
+		<?php
+			$license = isset($options['license_status']) ? unserialize($options['license_status']) : false;	
+			if(!$license || !$license['status'] || !function_exists('is_hsc_premium_exist')):
+		?>
+
 		<div class="postbox">			
 			<script type="text/javascript">
 				/**
@@ -906,6 +913,9 @@ if($_POST && isset($_POST['tonjoo_hsc_options']))
 				</div>
 			</div>
 		</div>
+
+		<?php endif; ?>
+
 	</div>
 	</div>
 	</div>	
