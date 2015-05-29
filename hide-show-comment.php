@@ -3,16 +3,17 @@
  * Plugin Name: Hide Show Comment
  * Plugin URI: https://www.tonjoostudio.com/addons/hide-show-comment
  * Description: Keep your reader focused on your content. Use this plugin, "hide and show" and "load more" your post comment !
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: tonjoo
  * Author URI: https://www.tonjoostudio.com/
  * Contributor: Todi Adiyatmo Wijoyo, Haris Ainur Rozak
  */
 
 define("TONJOO_HSCOMMENT",'show-hide-comment');
-define('HSCOMMENT_VERSION','1.1.3');
+define('HSCOMMENT_VERSION','1.1.4');
 define('HSCOMMENT_BASE_PATH',__DIR__);
 define('HSCOMMENT_DIR_NAME', str_replace("/hide-show-comment.php", "", plugin_basename(__FILE__)));
+define("HSCOMMENT_HTTP_PROTO", is_ssl() ? "https://" : "http://");
 
 // Included Files
 include __DIR__.'/vendor/autoload.php';

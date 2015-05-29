@@ -1,5 +1,5 @@
 === Hide Show Comment ===
-Contributors: Todi.Adiatmo, haristonjoo, Alzea
+Contributors: Todi.Adiatmo, haristonjoo
 Tags: comment, comments, hide comment, show comment, load more comment, automatic, auto
 Requires at least: 3.0.3
 Tested up to: 4.0
@@ -9,7 +9,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 Hide Show Comment is the simple wordpress plugin that allow the user to create a hide-show comment toggle button.
-
 The toggle button is easy to custom with the options page that located in the WordPress settings section.
 
 Since version 1.0.5, there are a new major feature comming in, the Load More function.
@@ -67,6 +66,13 @@ We can also modify your WordPress plugins according to your needs. Visit us: [To
 2. Complete setting options (with premium feature installed). Easy to configure.
 
 == Changelog ==
+
+= 1.1.4 =
+* Fixing google font http/https protocol
+
+= 1.1.3 =
+* Hide ads when premium key is registered
+* Fix known bugs
 
 = 1.1.2 =
 * Fixing issue with WPML 
