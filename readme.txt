@@ -34,8 +34,7 @@ And if you like our plugin and want to do more customization we offer the premiu
 * Hide Show and Load More animation
 * Comment number per load
 
-
-Get the premium version on [Hide Show Comment Premium](https://tonjoostudio.com/addons/hide-show-comment-premium/ "premium version")
+Get the premium version on <a href="https://tonjoostudio.com/addons/hide-show-comment-premium/" title="Hide Show Comment Premium Version" rel="friend">Hide Show Comment Premium</a>
 
 **Plugin Demo**
 You can try the plugin on this url: http://coba.tonjoostudio.com
@@ -43,11 +42,11 @@ You can try the plugin on this url: http://coba.tonjoostudio.com
 * username: coba
 * password: 123456
 
-*if you have any questions,comment,customization request or suggestion please contact us via our support forum: [Tonjoo Forum](https://forum.tonjoostudio.com/thread-category/hide-show-comment/) or you can find our best plugins at [Tonjoo Studio](https://tonjoostudio.com)
+*if you have any questions,comment,customization request or suggestion please contact us via our support forum: <a href="https://forum.tonjoostudio.com/thread-category/hide-show-comment/" title="Tonjoo Forum" rel="friend">Tonjoo Forum</a> or you can find our best plugins at <a href="https://tonjoostudio.com/" title="Tonjoo Studio" rel="friend"></a> 
 
-Find more detail on our official plugin page: [Hide Show Comment](https://tonjoostudio.com/addons/hide-show-comment "visit plugin site")
+Find more detail on our official plugin page: <a href="https://tonjoostudio.com/addons/hide-show-comment" title="visit plugin site" rel="friend">Hide Show Comment</a>
 
-We can also modify your WordPress plugins according to your needs. Visit us: [Tonjoo WordPress Developer](https://tonjoo.com "Visit Tonjoo Dev Website")
+*We can also modify your WordPress plugins according to your needs. Visit us: <a href="https://tonjoo.com" title="Visit Tonjoo Dev Website" rel="friend">Tonjoo Wordpress Developer</a>*
 
 **Usage Instruction**
 
